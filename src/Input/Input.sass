@@ -1,0 +1,128 @@
+.mathInput
+  user-select: none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  font: normal 1.21em KaTeX_Main,Times New Roman,serif
+  height: 48px
+  background: #FAFAFA
+  border-radius: 12px
+  border: 1px solid rgba(0, 0, 0, 0.15)
+  display: flex
+  align-items: center
+  padding: 0 16px
+  cursor: text
+  >.sequence
+    flex-grow: 1
+  textarea
+    transform: scale(0)
+    resize: none
+    position: absolute
+    clip: rect(0 0 0 0)
+    width: 1px
+    height: 1px
+  .cursor
+    position: relative
+    height: 1em
+    width: 0px
+  .cursor::after
+    display: none
+    content: ' '
+    position: absolute
+    width: 0px
+    border: 1px solid blue
+    height: 100%
+  .sequence
+    display: flex
+    align-items: center
+    .leftPad
+      display: inline-block
+      align-self: stretch
+      flex-grow: 1
+      min-width: 0.2em
+    .leftPad.root
+      flex-grow: 0
+    .rightPad
+      display: inline-block
+      align-self: stretch
+      flex-grow: 1
+      min-width: 0.2em
+  .squareRoot
+    padding: 0 2px
+    display: flex
+    position: relative
+    .radix
+      position: relative
+      display: inline-block
+      top: -0.3em
+      margin-left: .27777778em
+      margin-right: -1em
+      font-size: 0.5em
+      z-index: 1
+    .radical
+      position: relative
+      top: -0.1em
+    .sqrtLine
+      width: 100%
+      border-top: 1px solid black
+  .vertical
+    display: flex
+    flex-direction: column
+    align-items: stretch
+  .super
+    position: relative
+    display: inline-block
+    top: -0.3em
+    font-size: 0.7em
+    left: 0.2em
+  .super.bySqrt
+    top: -0.8em
+    padding-left: 0
+  .super.byFrac
+    top: -1em
+  .sub
+    position: relative
+    display: inline-block
+    bottom: -0.3em
+    font-size: 0.7em
+  .fraction
+    display: flex
+    padding: 0 0.2em
+  .numerator, .denominator
+    font-size: 0.7em
+  .bar
+    width: 100%
+    border-top: 1px solid black
+  .selected
+    background: grey
+  .comma
+    padding-right: 3px
+  .op
+    padding: 0 3px
+  .op.op1
+    padding: 0 4px
+  .op.unary
+    padding: 0
+  .first
+    padding-left: 0
+  .last
+    padding-right: 0
+  .alpha
+    font-style: italic
+    height: 1em
+  .placeholder
+    padding: 0 2px
+    font-size: 0.8em
+  .implicit
+    color: #999
+  .highlight
+    background-color: aqua
+  .invalid
+    background-color: pink
+
+.mathInput.focused
+  .cursor::after
+    display: block
+  .selected
+    background: #b4d6fe
+

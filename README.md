@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+# Math input takehome
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repo has a basic implementation of a math input. You can run it with:
+```
+npm i
+npm start
+```
 
-## Available Scripts
+Your task is to answer the following questions:
 
-In the project directory, you can run:
+1. Describe what unzipToCursor in Input/inputReducer.js returns. What is the point of it? What is its relationship to zip?
+2. What are "implicit" parens? When/where do they come into existence and when are they eliminated? Comprehensively the rules governing them.
+3. When doing a drag or shift select on the input, selectStartCursor and selectEffectiveStartCursor are set on the input state, e.g. at inputReducer.js:843. What are these properties and what is the difference between them? What are some situations where they will be the same and when they will be different?
 
-### `npm start`
+Make the following changes:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Given the input "1 , 2 / 3", it puts "1,2" in the numerator. It should only put 2 in the numerator and leave 1, outside the fraction. Fix this. This should be a 1 line change.
+2. Given the input "1 / bksp" it should leave just "1", not move the cursor up to the numerator. This should be a ~3 line change.
+3. A common mistake is to write sqrt(2i) instead of sqrt(2)i. Make a change to insert the "i" outside of the square root if the cursor is immediately inside a square root expression. In other words, the input "s q r t i" should result in "sqrt( ) i". This should be a ~4 line change.
