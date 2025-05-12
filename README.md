@@ -9,7 +9,7 @@ npm start
 Your task is to answer the following questions:
 
 1. Describe what unzipToCursor in Input/inputReducer.js returns. What is the point of it? What is its relationship to zip?
-2. What are "implicit" parens? When/where do they come into existence and when are they eliminated? Comprehensively the rules governing them.
+2. What are "implicit" parens? When/where do they come into existence and when are they eliminated? Comprehensively describe the rules governing them.
 3. When doing a drag or shift select on the input, selectStartCursor and selectEffectiveStartCursor are set on the input state, e.g. at inputReducer.js:843. What are these properties and what is the difference between them? What are some situations where they will be the same and when they will be different?
 
 Make the following changes:
